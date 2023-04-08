@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>航时灯</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://api.return2017.cn/15/st.js"></script>
+	<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css"/>
+	<link rel="shortcut icon" href="https://video.return2017.cn/ag42p-isuvi-001.ico" />
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			color: #333;
+		}
+		.countdown {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 50px;
+			font-size: 30px;
+			color: #333;
+		}
+		.countdown div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 10px;
+			padding: 10px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		.countdown div span {
+			font-size: 60px;
+			font-weight: bold;
+			color: #f00;
+		}
+		.countdown div p {
+			font-size: 20px;
+			margin: 0;
+			padding: 0;
+			color: #666;
+		}
+		.comment {
+			margin-top: 50px;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		.comment h2 {
+			margin-top: 0;
+			color: #333;
+		}
+		.comment form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 20px;
+		}
+		.comment input[type="text"], .comment textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+		}
+		.comment input			background-color: #f00;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			transition: all 0.3s ease;
+		}
+		.comment input[type="submit"]:hover {
+			background-color: #fff;
+			color: #f00;
+			box-shadow: 0 0 5px rgba(255,0,0,0.5);
+		}
+		.comment textarea {
+			height: 100px;
+		}
+		mdui.snackbar({
+  message: 'top',
+  position: 'top',
+});
+	</style>
+</head>
+<body class="mdui-theme-primary-teal">
+
+
+      <div class="mdui-toolbar mdui-color-theme">
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <span class="mdui-typo-title">2023中考倒计时</span>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="https://return2017.cn/2022/article/863.html" class="mdui-btn mdui-ripple" target="_blank">留言板</a>
+      </div>
+      
+	<h1>航时灯</h1>
+	<hr>
+	<h1 id="hitokoto">思考中...</h1>
+	<div class="countdown">
+		<div>
+			<span id="day">LD</span>
+			<p>天</p>
+		</div>
+		<div>
+			<span id="hour">LD</span>
+			<p>小时</p>
+		</div>
+		<div>
+			<span id="minute">LD</span>
+			<p>分钟</p>
+		</div>
+		<div>
+			<span id="second">LD</span>
+			<p>秒</p>
+		</div>
+	</div>
+	<div class="comment">
+		<h2>留言板</h2>
+		<form>
+		    <div class="mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">Email</label>
+  <input class="mdui-textfield-input" type="email"/>
+</div>
+			<input type="text" placeholder="姓名">
+			<textarea placeholder="留言"></textarea>
+			<input type="submit" value="继续">
+		</form>
+	</div>
+	<footer id="footer">
+						<span class="copyright">hmao &copy; 2020-2023 <a href="/">hmao</a>&ensp;|&ensp;<a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">吉ICP备2021006336号</a></span>
+					</footer>
+<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.1/js/mdui.min.js"></script>
+<script src="https://api.return2017.cn/12/3.js"></script>
+</body>
+</html>

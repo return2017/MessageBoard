@@ -7,13 +7,97 @@
   <meta name="renderer" content="webkit"/>
   <meta name="force-rendering" content="webkit"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
-    integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
-    crossorigin="anonymous"
-  />
+  <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css"/>
   <title><?php echo title; ?></title>
+  <style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			color: #333;
+		}
+		.countdown {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-top: 50px;
+			font-size: 30px;
+			color: #333;
+		}
+		.countdown div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 10px;
+			padding: 10px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		.countdown div span {
+			font-size: 60px;
+			font-weight: bold;
+			color: #f00;
+		}
+		.countdown div p {
+			font-size: 20px;
+			margin: 0;
+			padding: 0;
+			color: #666;
+		}
+		.comment {
+			margin-top: 50px;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		.comment h2 {
+			margin-top: 0;
+			color: #333;
+		}
+		.comment form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 20px;
+		}
+		.comment input[type="text"], .comment textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+		}
+		.comment input			background-color: #f00;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			transition: all 0.3s ease;
+		}
+		.comment input[type="submit"]:hover {
+			background-color: #fff;
+			color: #f00;
+			box-shadow: 0 0 5px rgba(255,0,0,0.5);
+		}
+		.comment textarea {
+			height: 100px;
+		}
+		mdui.snackbar({
+  message: 'top',
+  position: 'top',
+});
+	</style>
 </head>
 <body>
 <header class="mdui-appbar">
@@ -21,21 +105,33 @@
     <div class="mdui-typo-headline"><?php echo title; ?></div>
     <div class="mdui-toolbar-spacer"></div>
     <a class="mdui-btn mdui-btn-icon" id="color"><i class="mdui-icon material-icons">color_lens</i></a>
-    <a href="https://github.com/jsun969/MessageBoard" target="_blank"
-       class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white">
-      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-           x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon"
-           style="width: 24px;height:24px;">
-        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
-	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
-	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
-	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
-	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
-	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+    
       </svg>
     </a>
   </div>
+
 </header>
+
+<h1 id="hitokoto">思考中...</h1>
+<hr>
+	<div class="countdown">
+		<div>
+			<span id="day">LD</span>
+			<p>天</p>
+		</div>
+		<div>
+			<span id="hour">LD</span>
+			<p>小时</p>
+		</div>
+		<div>
+			<span id="minute">LD</span>
+			<p>分钟</p>
+		</div>
+		<div>
+			<span id="second">LD</span>
+			<p>秒</p>
+		</div>
+	</div>
 <main class="mdui-container">
   <form action="submit.php" method="post" class="mdui-m-b-2 mdui-col-xs-12">
     <div class="mdui-textfield mdui-textfield-floating-label mdui-col-xs-6 userInfo">
@@ -100,11 +196,26 @@
 
 
 </main>
-<script
-  src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
-  integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
-  crossorigin="anonymous"
-></script>
+<script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/js/mdui.min.js"></script>
+<script src="https://api.return2017.cn/15/st.js"></script>
 <script src="./js/index.js"></script>
+<script>
+fetch('https://v1.hitokoto.cn')
+			.then(function (res) {
+			return res.json();
+		})
+			.then(function (data) {
+			var hitokoto = document.getElementById('hitokoto');
+			hitokoto.innerText = data.hitokoto;
+		})
+			.
+		catch (function (err) {
+			console.error(err);
+		})
+		console.log("\n %c 航时灯 %c Powered by FANHUI | return2017.cn ", "color:#444;background:#eee;padding:5px 0;", "color:#eee;background:#444;padding:5px 0;");
+</script>
+<footer id="footer">
+						<span class="copyright">hmao &copy; 2020-2023 <a href="/">hmao</a>&ensp;|&ensp;<a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">吉ICP备2021006336号</a></span>
+					</footer>
 </body>
 </html>
